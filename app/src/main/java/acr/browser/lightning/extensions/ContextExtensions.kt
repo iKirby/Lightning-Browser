@@ -6,6 +6,7 @@ import android.content.Context
 import android.graphics.drawable.Drawable
 import android.os.Build
 import android.view.LayoutInflater
+import android.webkit.WebSettings
 import android.widget.Toast
 import androidx.annotation.*
 import androidx.core.content.ContextCompat
@@ -50,3 +51,13 @@ val Context.preferredLocale: Locale
         @Suppress("DEPRECATION")
         resources.configuration.locale
     }
+
+/**
+ * Get a fake Chrome user agent
+ */
+fun Context.getFakeChromeUserAgent(): String {
+    val ua = StringBuilder(WebSettings.getDefaultUserAgent(this))
+    ua.inlineReplace("; wv", "")
+    ua.inlineReplace("Version/4.0 ", "")
+    return ua.toString()
+}
