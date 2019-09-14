@@ -6,8 +6,8 @@
 package acr.browser.lightning.constant
 
 // Hardcoded user agents
-const val DESKTOP_USER_AGENT = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36"
-const val MOBILE_USER_AGENT = "Mozilla/5.0 (Linux; Android 8.0; Pixel 2 Build/OPD3.170816.012) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Mobile Safari/537.36"
+const val DESKTOP_USER_AGENT = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36"
+const val MOBILE_USER_AGENT = "Mozilla/5.0 (Linux; Android 10; Pixel Build/QP1A.190711.019; wv) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Mobile Safari/537.36"
 
 // URL Schemes
 const val HTTP = "http://"
@@ -20,13 +20,6 @@ const val FOLDER = "folder://"
 const val SCHEME_HOMEPAGE = "${ABOUT}home"
 const val SCHEME_BLANK = "${ABOUT}blank"
 const val SCHEME_BOOKMARKS = "${ABOUT}bookmarks"
-
-const val LOAD_READING_URL = "ReadingUrl"
-
-const val NO_PROXY = 0
-const val PROXY_ORBOT = 1
-const val PROXY_I2P = 2
-const val PROXY_MANUAL = 3
 
 const val UTF8 = "UTF-8"
 
