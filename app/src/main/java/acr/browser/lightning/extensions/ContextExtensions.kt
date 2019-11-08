@@ -57,7 +57,7 @@ val Context.preferredLocale: Locale
  */
 fun Context.getFakeChromeUserAgent(): String {
     val ua = StringBuilder(WebSettings.getDefaultUserAgent(this))
-    ua.inlineReplace("; wv", "")
+    ua.inlineReplace(" Build/${Build.ID}; wv", "")
     ua.inlineReplace("Version/4.0 ", "")
     return ua.toString()
 }
