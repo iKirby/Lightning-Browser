@@ -1581,13 +1581,23 @@ abstract class BrowserActivity : ThemableBrowserActivity(), BrowserView, UIContr
                     or SYSTEM_UI_FLAG_FULLSCREEN
                     or SYSTEM_UI_FLAG_IMMERSIVE_STICKY)
             } else {
-                decor.systemUiVisibility = SYSTEM_UI_FLAG_VISIBLE
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O_MR1 && userPreferences.useTheme == AppTheme.LIGHT) {
+                    decor.systemUiVisibility = SYSTEM_UI_FLAG_VISIBLE or
+                            SYSTEM_UI_FLAG_LIGHT_STATUS_BAR or SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR
+                } else {
+                    decor.systemUiVisibility = SYSTEM_UI_FLAG_VISIBLE
+                }
             }
             window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN)
         } else {
             window.clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN)
-            decor.systemUiVisibility = SYSTEM_UI_FLAG_VISIBLE
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O_MR1 && userPreferences.useTheme == AppTheme.LIGHT) {
+                decor.systemUiVisibility = SYSTEM_UI_FLAG_VISIBLE or
+                        SYSTEM_UI_FLAG_LIGHT_STATUS_BAR or SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR
+            } else {
+                decor.systemUiVisibility = SYSTEM_UI_FLAG_VISIBLE
+            }
         }
     }
 
